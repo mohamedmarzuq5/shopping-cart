@@ -10,6 +10,7 @@ var hbs = require("express-handlebars").create({
   partialsDir: path.join(__dirname, "/views/partials/"),
 }).engine;
 var fileUpload = require("express-fileupload");
+var session = require('express-session')
 
 var db = require("./config/connection");
 
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(fileUpload());
+app.use(session({secret:"Key", cookie:{maxAge:60000}}))
 
 db.connect((err) => {
   if (err) {
