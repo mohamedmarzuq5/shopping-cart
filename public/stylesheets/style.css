@@ -1,0 +1,6 @@
+body {
+    overflow-x: hidden;
+}
+.card-text {
+    margin-top: 23px !important;
+}

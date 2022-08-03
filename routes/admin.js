@@ -26,11 +26,11 @@ router.post("/add-product", (req, res) => {
       if (!err) {
         res.render('admin/add-product', { admin: true });
       } else {
-        console.log('Error Mohamed' + err);
+        console.log('Error Mohamed!' + err);
       }
     })
     
   })
 });
 
-module.exports = router; 
+module.exports = router;
